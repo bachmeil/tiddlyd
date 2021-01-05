@@ -30,3 +30,12 @@ Click the "Discussions" tab if you have any questions.
 # cgi.d
 
 For convenience, I've included a copy of Adam Ruppe's `cgi.d` file, [taken from his helpful repo](https://github.com/adamdruppe/arsd). As this repo might not always have the latest version of `cgi.d`, you may want to grab the latest version from the source.
+
+# Other Compilers
+
+LDC and GDC have been tested and are known to work. You can change the compilation command accordingly:
+
+```
+ldmd2 tiddly.d newcgi.d -version=embedded_httpd
+gdc tiddly.d newcgi.d -fversion=embedded_httpd
+```
