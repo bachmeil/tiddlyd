@@ -19,7 +19,7 @@ dmd tiddly.d newcgi.d -version=embedded_httpd
 ./tiddly
 ```
 
-Navigate your browser to <localhost:8085/empty> and start using TiddlyWiki. The updated `empty.html` file will be saved on every edit of the tiddler. (You con confirm that it's working by reloading the file after the first change just to be safe.)
+Navigate your browser to <http://localhost:8085/empty> and start using TiddlyWiki. The updated `empty.html` file will be saved on every edit of the tiddler. (You con confirm that it's working by reloading the file after the first change just to be safe.)
 
 Click the "Discussions" tab if you have any questions.
 
