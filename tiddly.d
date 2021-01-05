@@ -1,5 +1,5 @@
 import arsd.cgi;
-import std.file, std.stdio;
+import std.file;
 
 void hello(Cgi cgi) {
   if (cgi.pathInfo == "/empty") {
