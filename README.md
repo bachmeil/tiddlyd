@@ -1,6 +1,6 @@
 # Overview
 
-[TiddlyWiki](https://tiddlywiki.com/) is a single-file web app that can be used as a wiki, journal, and numerous other things. The magic of TiddlyWiki in its early days happened when you used it on Firefox. You'd load a single html file in your browser and you'd save your updates inside the file itself. At some point, for security reasons, Mozilla removed that functionality. The present state of the TiddlyWiki getting started page is a smorgasbord of options, all of which require at least a modest level of technical knowledge, and none of which have a save process that results in an updated html file and nothing more.
+[TiddlyWiki](https://tiddlywiki.com/) is a single-file web app that can be used as a wiki, journal, and numerous other things. The magic of TiddlyWiki in its early days happened when you used it on Firefox. You'd load a single html file in your browser and then save your updates inside the file itself. At some point, for security reasons, Mozilla removed that functionality. The present state of the TiddlyWiki getting started page is a smorgasbord of options, all of which require at least a modest level of technical knowledge, and none of which have a save process that results in an updated html file and nothing more.
 
 I set out to create an option in D that:
 
@@ -22,3 +22,7 @@ dmd tiddly.d newcgi.d -version=embedded_httpd
 Navigate your browser to [localhost:8085/empty](localhost:8085/empty) and start using TiddlyWiki. The updated `empty.html` file will be saved on every edit of the tiddler. (You con confirm that it's working by reloading the file after the first change just to be safe.)
 
 Click the "Discussions" tab if you have any questions.
+
+# cgi.d
+
+For convenience, I've included a copy of Adam Ruppe's `cgi.d` file, [taken from his helpful repo](https://github.com/adamdruppe/arsd). As this repo might not always have the latest version of `cgi.d`, you may want to grab the latest version from the source.
