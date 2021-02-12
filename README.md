@@ -1,6 +1,6 @@
 # Overview
 
-[TiddlyWiki](https://tiddlywiki.com/) is a single-file web app that can be used as a wiki, journal, and numerous other things. The magic of TiddlyWiki in its early days happened when you used it on Firefox. You'd load a single html file in your browser and then save your updates inside the file itself. At some point, for security reasons, Mozilla removed that functionality. The present state of the TiddlyWiki getting started page is a smorgasbord of options, all of which require at least a modest level of technical knowledge, and none of which have a save process that results in an updated html file and nothing more.
+[TiddlyWiki](https://tiddlywiki.com/) is a single-file web app that can be used as a wiki, journal, and numerous other things. The magic of TiddlyWiki in its early days was when you'd load it as a single html file in Firefox and it would save your updates automatically while you work. At some point, for security reasons, Firefox removed the ability to automagically save updates. The present state of the TiddlyWiki getting started page is a smorgasbord of options, all of which require at least a modest level of technical knowledge, and none of which have a save process that results in an updated html file and nothing more.
 
 That's where this project comes in. I set out to create an option in D that:
 
@@ -8,20 +8,28 @@ That's where this project comes in. I set out to create an option in D that:
 - is dead simple to use, and
 - updates the existing html file and does nothing else - no backups, no directories of files, just an updated version of the html file you're working on.
 
+There's nothing learn in order to use tiddlyd. You enter a single short compilation command to create the executable. When you want to use your wiki, you run the executable and open the html file in your browser. Some things I hate: dependencies, configuration files, upgrades, breaking changes, surprises that eat up 8 GB of RAM, spending half the morning repairing something to get my system working again. tiddlyd lets me avoid all of them.
+ 
 # Download and Compile
 
 **Step 1** Either download the two D files (`tiddly.d` and `cgi.d`) or clone this repo. Download an empty tiddler into the same directory. You can always get the latest version of the empty tiddler by clicking the "Download Empty" button on [the TiddlyWiki website](https://tiddlywiki.com/).
 
-**Step 2** (Optional) Install the latest DMD compiler [from here](https://dlang.org/download.html) if you don't already have a D compiler.
+**Step 2** (If needed) Install the latest DMD compiler [from here](https://dlang.org/download.html) if you don't already have a D compiler.
 
-**Step 3** Compile and run:
+**Step 3** Compile and run. The second line should work on Linux or Mac. If you're using Windows, use whatever method you use on Windows to run an executable.
 
 ```
 dmd tiddly.d newcgi.d -version=embedded_httpd
 ./tiddly
 ```
 
-Navigate your browser to localhost:8085/empty and start using TiddlyWiki. The updated `empty.html` file will be saved on every edit of the tiddler. (You con confirm that it's working by reloading the file after the first change just to be safe.)
+Navigate your browser to localhost:8085/empty and start using TiddlyWiki. The updated `empty.html` file will be saved on every edit of the tiddler. (You can confirm that it's working by reloading the file after the first change just to be safe.)
+
+# Different filename or URL
+
+The name of the TiddlyWiki file is hardcoded in lines 9 and 11 of tiddly.d. If you want to use a different filename, change the name there and recompile.
+
+If you want to use a different URL, change line 5 and recompile. I plan to update to handle any filename automatically. I haven't gotten around to it yet since I always use empty.html.
 
 # Questions
 
