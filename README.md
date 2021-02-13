@@ -19,7 +19,7 @@ There's nothing learn in order to use tiddlyd. You enter a single short compilat
 **Step 3** Compile and run. The second line should work on Linux or Mac. If you're using Windows, use whatever method you use on Windows to run an executable.
 
 ```
-dmd tiddly.d newcgi.d -version=embedded_httpd
+dmd tiddly.d cgi.d -version=embedded_httpd
 ./tiddly
 ```
 
