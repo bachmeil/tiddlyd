@@ -23,13 +23,11 @@ dmd tiddly.d cgi.d -version=embedded_httpd
 ./tiddly
 ```
 
-Navigate your browser to localhost:8085/empty and start using TiddlyWiki. The updated `empty.html` file will be saved on every edit of the tiddler. (You can confirm that it's working by reloading the file after the first change just to be safe.)
+Navigate your browser to localhost:8085 and start using TiddlyWiki. The updated `empty.html` file will be saved on every edit of the tiddler. (You can confirm that it's working by reloading the file after the first change just to be safe.)
 
 # Different filename or URL
 
-The name of the TiddlyWiki file is hardcoded in lines 9 and 11 of tiddly.d. If you want to use a different filename, change the name there and recompile.
-
-If you want to use a different URL, change line 5 and recompile. I plan to update to handle any filename automatically. I haven't gotten around to it yet since I always use empty.html.
+The default filename is empty.html. You can call your wiki's filename anything you want as long as it has an html extension. You then call it with the URL localhost:8085/[filename], where [filename] is the name of the file with or without the html extension. For instance, if your wiki file is named mywiki.html, you can go to the URL localhost:8085/mywiki or localhost:8085/mywiki.html.
 
 # Questions
 
